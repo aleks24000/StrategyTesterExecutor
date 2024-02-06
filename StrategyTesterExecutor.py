@@ -29,10 +29,10 @@ class StrategyTesterExecutor:
             config.write(configfile, space_around_delimiters=False)
 
     def executeTester(self):
-        os.system('cd '+self.mt4path+'  && wine terminal.exe curmt4.ini')
+        os.system('cd '+self.mt4path+'  && rm curreport* && wine terminal.exe curmt4.ini')
 
     def read_report(self):
-        with open(self.mt4path+'/curreport.html') as htmlreport:
+        with open(self.mt4path+'/curreport.html', encoding='latin-1') as htmlreport:
             lines = [line for line in htmlreport]
         print(lines)
 
