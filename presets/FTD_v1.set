@@ -1,3 +1,5 @@
+[dummy]
+
 magic=0
 magic,F=0
 magic,1=0
@@ -72,9 +74,9 @@ gs_multiplicator,1=1.30000000
 gs_multiplicator,2=0.00000000
 gs_multiplicator,3=0.00000000
 gap21=
-grid_size=60.00000000
+grid_size=260.00000000
 grid_size,F=0
-grid_size,1=40.00000000
+grid_size,1=100.00000000
 grid_size,2=0.00000000
 grid_size,3=0.00000000
 take_profit=20.00000000
