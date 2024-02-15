@@ -40,7 +40,7 @@ class StrategyTesterExecutor:
         with open(self.mt4path + '/fullreport.csv', 'w', newline='') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=';',
                                     quotechar=',', quoting=csv.QUOTE_MINIMAL)
-            spamwriter.writerow(['Profit', 'Profit brut', 'Perte brute', 'Chute', 'Keys', 'Values', 'Symbol'])
+            spamwriter.writerow(['Total Trades', 'Profit', 'Profit brut', 'Perte brute', 'Chute', 'Keys', 'Values', 'Symbol'])
 
         for sym in self.symbols:
             self.parse_all_ini_and_exec(sym)
@@ -111,6 +111,7 @@ class StrategyTesterExecutor:
             profitbrut=''
             pertebrute=''
             chute=''
+            totaltrades=''
             for line in htmlreport:
                 if(line.__contains__('Profit total net')):
                     id1=line.index('Profit total net')+37
@@ -127,8 +128,13 @@ class StrategyTesterExecutor:
                     id7 = line.index('Chute maximale') + 35
                     id8 = line.index('td', id7) - 2
                     chute = line[id7:id8]
+                if (line.__contains__('Total des Trades')):
+                    id9 = line.index('Total des Trades') + 37
+                    id10 = line.index('td', id9) - 2
+                    totaltrades = line[id9:id10]
+                    break
 
         with open(self.mt4path+'/fullreport.csv', 'a', newline='') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=';',
                                     quotechar=',', quoting=csv.QUOTE_MINIMAL)
-            spamwriter.writerow([profit, profitbrut, pertebrute, chute, self.otherkeys, valuestab, symbol])
+            spamwriter.writerow([totaltrades, profit, profitbrut, pertebrute, chute, self.otherkeys, valuestab, symbol])
