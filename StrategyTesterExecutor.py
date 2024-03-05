@@ -21,6 +21,7 @@ class StrategyTesterExecutor:
 
     def read_ini_file(self):
         config = configparser.ConfigParser()
+        config.optionxform = str
         config.sections()
         config.read(self.argfile)
         self.symbols = config['symbols']['symbol'].split()
