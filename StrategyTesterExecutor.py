@@ -7,14 +7,14 @@ from itertools import product
 
 class StrategyTesterExecutor:
 
-    def __init__(self, argfile):
+    def __init__(self, argfile, argexepath):
         self.argfile = argfile
         self.symbols = 'EURUSD'
         self.otherkeys = 'keys'
         self.othervalues = 'values'
         self.othervaluesmap = []
 
-        self.mt4path = "/home/alex/work/FXCMMetaTrader4"
+        self.mt4path = argexepath
 
     def f(self):
         return 'hello world'

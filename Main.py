@@ -5,9 +5,10 @@ from StrategyTesterExecutor import StrategyTesterExecutor
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--file', help='Strategy executor file argument')
+    parser.add_argument('--exepath', help='MT4 path')
     args = parser.parse_args()
-    #print(f'Hello, {args.file}!')
-    ste = StrategyTesterExecutor(args.file)
+    #print(f'Hello, {args.exepath}!')
+    ste = StrategyTesterExecutor(args.file, args.exepath)
     #print(ste.f())
     ste.read_ini_file()
     ste.exec_all()
