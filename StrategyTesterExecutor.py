@@ -1,6 +1,7 @@
 import configparser
 import os
 import csv
+import shutil
 from itertools import combinations,permutations
 from itertools import product
 
@@ -9,11 +10,11 @@ class StrategyTesterExecutor:
 
     def __init__(self, argfile, argexepath):
         self.argfile = argfile
+        self.expert = 'expert'
         self.symbols = 'EURUSD'
         self.otherkeys = 'keys'
         self.othervalues = 'values'
         self.othervaluesmap = []
-
         self.mt4path = argexepath
 
     def f(self):
@@ -25,6 +26,7 @@ class StrategyTesterExecutor:
         config.sections()
         config.read(self.argfile)
         self.symbols = config['symbols']['symbol'].split()
+        self.expert = config['default']['expert']
         self.otherkeys = list(config['others'].keys())
         self.othervalues = list(config['others'].values())
         #transform to map
@@ -35,6 +37,10 @@ class StrategyTesterExecutor:
         print(self.othervalues)
         print(self.othervaluesmap)
         print(self.symbols)
+
+        # copy expert to mt4 path
+        shutil.copyfile('./experts/' + self.expert + ".ex4", self.mt4path + "/MQL4/Experts/" + self.expert + ".ex4")
+        print(self.expert)
 
     def exec_all(self):
         # init csv report file
@@ -98,6 +104,7 @@ class StrategyTesterExecutor:
         config.optionxform = str
         config.read('./ini/styt.ini')
         config['dummy']['TestSymbol'] = symbol
+        config['dummy']['TestExpert'] = self.expert
 
         with open(self.mt4path+'/curmt4.ini', 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
