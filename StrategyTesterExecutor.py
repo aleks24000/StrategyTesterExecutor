@@ -11,6 +11,7 @@ class StrategyTesterExecutor:
     def __init__(self, argfile, argexepath):
         self.argfile = argfile
         self.expert = 'expert'
+        self.preset = 'FTD_v1.set'
         self.symbols = 'EURUSD'
         self.otherkeys = 'keys'
         self.othervalues = 'values'
@@ -27,6 +28,7 @@ class StrategyTesterExecutor:
         config.read(self.argfile)
         self.symbols = config['symbols']['symbol'].split()
         self.expert = config['default']['expert']
+        self.preset = config['default']['preset']
         self.otherkeys = list(config['others'].keys())
         self.othervalues = list(config['others'].values())
         #transform to map
@@ -82,7 +84,7 @@ class StrategyTesterExecutor:
     def create_preset(self, valuestab):
         config = configparser.RawConfigParser()
         config.optionxform = str
-        config.read('./presets/FTD_v1.set')
+        config.read('./presets/'+self.preset)
         #config['dummy']['TestSymbol'] = 'EURUSD'
 
         #f = open(self.mt4path + '/MQL4/tester/FTD_v1.set', "w")
