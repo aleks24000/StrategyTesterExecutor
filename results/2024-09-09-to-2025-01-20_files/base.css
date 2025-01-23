@@ -1,0 +1,452 @@
+.page {
+
+}
+
+.page-body {
+
+}
+
+.page-before {
+
+}
+
+.page-after {
+
+}
+
+.body {
+
+}
+
+.report_caption {
+
+}
+
+.report_caption_cell {
+
+}
+
+.report_caption_cell_text {
+    FONT-SIZE: 30px
+}
+
+.pair {
+
+}
+
+.pair_set {
+
+}
+
+.pair_set_name {
+
+}
+
+.pair_set_name_text {
+    FONT-SIZE: 11px
+}
+
+.pair_set_value {
+
+}
+
+.pair_set_value_text {
+    FONT-SIZE: 11px
+}
+
+.pair_name {
+
+}
+
+.pair_name_text {
+    FONT-SIZE: 11px
+}
+
+.pair_name_text_left {
+    FONT-SIZE: 11px; TEXT-ALIGN: left
+}
+
+.pair_value {
+
+}
+
+.pair_value_text {
+    FONT-SIZE: 11px
+}
+
+.separator_line {
+
+}
+
+.separator_line_pdf_long {
+    MARGIN-LEFT: 11px; MARGIN-RIGHT: 11px
+}
+
+.separator_line_separator_cell {
+
+}
+
+.separator_low {
+
+}
+
+.separator_low_separator_cell {
+
+}
+
+.separator_high {
+
+}
+
+.separator_high_separator_cell {
+
+}
+
+.caption {
+
+}
+
+.caption_2 {
+
+}
+
+.caption_3 {
+
+}
+
+.caption_firm {
+
+}
+
+.caption_firm_text {
+
+}
+
+.caption_user {
+
+}
+
+.caption_user_text {
+
+}
+
+.caption_text {
+
+}
+
+.caption_2_text {
+
+}
+
+.caption_3_text {
+
+}
+
+.caption_text_text {
+    FONT-SIZE: 11px
+}
+
+.caption_2_text_text {
+    FONT-SIZE: 11px
+}
+
+.caption_3_text_text {
+    FONT-SIZE: 11px
+}
+
+.caption_addition {
+
+}
+
+.caption_2_addition {
+
+}
+
+.caption_3_addition {
+
+}
+
+.caption_addition_text {
+
+}
+
+.caption_2_addition_text {
+
+}
+
+.caption_3_addition_text {
+
+}
+
+.table_free {
+
+}
+
+.table_wide {
+
+}
+
+.table_summary {
+
+}
+
+.table_caption_firm {
+
+}
+
+.table_caption_user {
+
+}
+
+.table_note {
+
+}
+
+.note {
+
+}
+
+.cell {
+
+}
+
+.cell_text {
+
+}
+
+.empty_cell {
+
+}
+
+.empty_cell_text {
+
+}
+
+.note_text {
+
+}
+
+.cell_merged_top {
+
+}
+
+.cell_merged_middle {
+
+}
+
+.cell_merged_bottom {
+
+}
+
+.header {
+
+}
+
+.header_text {
+
+}
+
+.link {
+    COLOR: blue; text-decoration: underline
+}
+
+.total {
+
+}
+
+.total_text {
+
+}
+
+.additional_total {
+
+}
+
+.additional_total_text {
+
+}
+
+.stringData {
+    TEXT-ALIGN: left
+}
+
+.stringDataCenter {
+    TEXT-ALIGN: center
+}
+
+.numberData {
+    TEXT-ALIGN: right
+}
+
+.dateData {
+    TEXT-ALIGN: right
+}
+
+.leftAlign {
+    TEXT-ALIGN: left
+}
+
+.centerAlign {
+    TEXT-ALIGN: center
+}
+
+.rightAlign {
+    TEXT-ALIGN: right
+}
+
+.error_header {
+    font-family: Tahoma,Verdana,Arial; font-size: 13pt; font-weight: bold; color: black
+}
+
+.error_page {
+    background-color: #F0F0F0
+}
+
+.error_text {
+    font-family: Tahoma,Verdana,Arial; font-size: 8pt; color: black
+}
+
+.subheader {
+
+}
+
+.header_merged_top {
+
+}
+
+.header_merged_bottom {
+
+}
+
+.header_merged_middle {
+
+}
+
+.pair_info {
+
+}
+
+.pair_info_name {
+
+}
+
+.pair_info_name_text {
+    FONT-SIZE: 11px; TEXT-ALIGN: left
+}
+
+.pair_info_value {
+
+}
+
+.pair_info_value_text {
+    FONT-SIZE: 11px; TEXT-ALIGN: right
+}
+
+.global_report_caption {
+
+}
+
+.global_report_caption_cell {
+
+}
+
+.global_report_caption_cell_text {
+
+}
+
+.global_pair {
+
+}
+
+.global_pair_name {
+
+}
+
+.global_pair_value {
+
+}
+
+.global_pair_value_text {
+
+}
+
+.global_parameter_table {
+    WIDTH: 100%
+}
+
+.global_parameter {
+    PADDING-TOP: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-BOTTOM: 0px; COLOR: blue
+}
+
+.global_parameter_text {
+    FONT-SIZE: 11px; FONT-STYLE: normal; FONT-FAMILY: Arial, Verdana, sans-serif; FONT-WEIGHT: normal; TEXT-ALIGN: center
+}
+
+.global_parameter_name {
+    PADDING-TOP: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; COLOR: blue
+}
+
+.global_parameter_name_text {
+    FONT-SIZE: 11px; FONT-STYLE: normal; FONT-FAMILY: Arial, Verdana, sans-serif; FONT-WEIGHT: bold; TEXT-ALIGN: left
+}
+
+.global_parameter_value {
+    PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-BOTTOM: 0px; COLOR: blue
+}
+
+.global_parameter_value_text {
+    FONT-SIZE: 11px; FONT-STYLE: normal; FONT-FAMILY: Arial, Verdana, sans-serif; FONT-WEIGHT: normal; TEXT-ALIGN: left
+}
+
+.global_parameter_table_free {
+
+}
+
+.global_cell {
+
+}
+
+.global_cell_text {
+
+}
+
+.global_header_blue {
+
+}
+
+.global_header {
+
+}
+
+.global_header_text {
+
+}
+
+.connection {
+
+}
+
+.connection_name {
+    COLOR: black; HEIGHT: 20px; padding-left: 7px
+}
+
+.connection_text {
+    FONT-SIZE: 11px; FONT-WEIGHT: bold; FONT-STYLE: normal; FONT-FAMILY: Verdana, Tahoma, Arial
+}
+
+.connection_name2 {
+    COLOR: black; HEIGHT: 20px; padding-left: 20px
+}
+
+.connection_value {
+    HEIGHT: 20px; padding-left: 7px
+}
+
+.even {
+
+}
+
+.odd {
+
+}
+
