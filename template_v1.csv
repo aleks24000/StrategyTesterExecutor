@@ -16,7 +16,7 @@ FTD_v1.set,AUDJPY,min_lots,0.02,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
 // 2025-01-20
 
 FTD_v1.set,USDJPY,min_lots,0.04,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
-FTD_v1.set,AUDNZD,min_lots,0.01,grid_size,40,take_profit,80,Use_ATR,0,ATR_tf,60
+FTD_v1.set,AUDNZD,min_lots,0.02,grid_size,40,take_profit,80,Use_ATR,0,ATR_tf,60
 FTD_v1.set,EURGBP,min_lots,0.04,grid_size,40,take_profit,40,Use_ATR,1,ATR_tf,60
 FTD_v1.set,AUDCAD,min_lots,0.04,grid_size,40,take_profit,40,Use_ATR,1,ATR_tf,60
 FTD_v1.set,GBPUSD,min_lots,0.03,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
@@ -25,3 +25,16 @@ FTD_v1.set,EURNZD,min_lots,0.03,grid_size,80,take_profit,60,Use_ATR,0,ATR_tf,60
 FTD_v1.set,NZDUSD,min_lots,0.02,grid_size,40,take_profit,40,Use_ATR,0,ATR_tf,60
 FTD_v1.set,EURUSD,min_lots,0.02,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
 FTD_v1.set,AUDJPY,min_lots,0.02,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
+
+// 2025-02-24
+
+FTD_v1.set,USDJPY,min_lots,0.04,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
+FTD_v1.set,AUDNZD,min_lots,0.03,grid_size,40,take_profit,80,Use_ATR,0,ATR_tf,60
+FTD_v1.set,EURGBP,min_lots,0.05,grid_size,40,take_profit,40,Use_ATR,1,ATR_tf,60
+FTD_v1.set,AUDCAD,min_lots,0.05,grid_size,40,take_profit,40,Use_ATR,1,ATR_tf,60
+FTD_v1.set,GBPUSD,min_lots,0.04,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
+FTD_v1.set,EURCAD,min_lots,0.04,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
+FTD_v1.set,EURNZD,min_lots,0.04,grid_size,80,take_profit,60,Use_ATR,0,ATR_tf,60
+FTD_v1.set,NZDUSD,min_lots,0.03,grid_size,40,take_profit,40,Use_ATR,0,ATR_tf,60
+FTD_v1.set,EURUSD,min_lots,0.04,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
+FTD_v1.set,AUDJPY,min_lots,0.03,grid_size,20,take_profit,20,Use_ATR,1,ATR_tf,60
