@@ -4,11 +4,12 @@ import csv
 import shutil
 from itertools import combinations,permutations
 from itertools import product
+import subprocess
 
 
 class StrategyTesterExecutor:
 
-    def __init__(self, argfile, argexepath):
+    def __init__(self, argfile, argexepath, argdatapath):
         self.argfile = argfile
         self.expert = 'expert'
         self.preset = 'FTD_v1.set'
@@ -17,6 +18,7 @@ class StrategyTesterExecutor:
         self.othervalues = 'values'
         self.othervaluesmap = []
         self.mt4path = argexepath
+        self.mt4datapath = argdatapath
 
     def f(self):
         return 'hello world'
@@ -41,12 +43,12 @@ class StrategyTesterExecutor:
         print(self.symbols)
 
         # copy expert to mt4 path
-        shutil.copyfile('./experts/' + self.expert + ".ex4", self.mt4path + "/MQL4/Experts/" + self.expert + ".ex4")
+        shutil.copyfile('./experts/' + self.expert + ".ex4", self.mt4datapath + "/MQL4/Experts/" + self.expert + ".ex4")
         print(self.expert)
 
     def exec_all(self):
         # init csv report file
-        with open(self.mt4path + '/fullreport.csv', 'w', newline='') as csvfile:
+        with open(self.mt4datapath + '/fullreport.csv', 'w', newline='') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=';',
                                     quotechar=',', quoting=csv.QUOTE_MINIMAL)
             spamwriter.writerow(['Total Trades', 'Profit', 'Profit brut', 'Perte brute', 'Chute', 'Keys', 'Values', 'Symbol'])
@@ -97,7 +99,7 @@ class StrategyTesterExecutor:
             config['dummy'][self.otherkeys[idx]] = val
             idx=idx+1
 
-        with open(self.mt4path + '/tester/FTD_v1.set', 'w') as configfile:
+        with open(self.mt4datapath + '/tester/FTD_v1.set', 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
 
 
@@ -108,14 +110,23 @@ class StrategyTesterExecutor:
         config['dummy']['TestSymbol'] = symbol
         config['dummy']['TestExpert'] = self.expert
 
-        with open(self.mt4path+'/curmt4.ini', 'w') as configfile:
+        with open(self.mt4datapath+'/curmt4.ini', 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
 
     def executeTester(self):
-        os.system('cd '+self.mt4path+' ; rm curreport* ; wine terminal.exe curmt4.ini')
+        #os.system('cd '+self.mt4path+' ; rm curreport* ; wine terminal.exe '+ self.mt4datapath+'\curmt4.ini')
+        command = f'cd "{self.mt4datapath}" && del curreport*  && cd "{self.mt4path}" && terminal.exe "{self.mt4datapath}/curmt4.ini"'
+
+        try:
+            result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)
+            print("✅ Commande exécutée avec succès.")
+            print("🟢 Sortie standard :", result.stdout)
+        except subprocess.CalledProcessError as e:
+            print(f"❌ La commande a échoué avec le code : {e.returncode}")
+            print("🔴 Erreur standard :", e.stderr)
 
     def read_report(self, symbol, valuestab):
-        with open(self.mt4path+'/curreport.html', encoding='latin-1') as htmlreport:
+        with open(self.mt4datapath+'/curreport.html', encoding='latin-1') as htmlreport:
             #lines = [line for line in htmlreport]
             profit='';
             profitbrut=''
@@ -144,7 +155,7 @@ class StrategyTesterExecutor:
                     totaltrades = line[id9:id10]
                     break
 
-        with open(self.mt4path+'/fullreport.csv', 'a', newline='') as csvfile:
+        with open(self.mt4datapath+'/fullreport.csv', 'a', newline='') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=';',
                                     quotechar=',', quoting=csv.QUOTE_MINIMAL)
             spamwriter.writerow([totaltrades, profit, profitbrut, pertebrute, chute, self.otherkeys, valuestab, symbol])
